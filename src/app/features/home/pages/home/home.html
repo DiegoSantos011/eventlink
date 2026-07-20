@@ -1,16 +1,41 @@
-<div class="hero__content">
-  <span class="hero__eyebrow">SEU EVENTO COMEÇA AQUI</span>
+<app-header />
 
-  <h1>
-    Encontre os profissionais certos para transformar seu evento.
-  </h1>
+<main class="home">
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__content">
+        <span class="hero__eyebrow">SEU EVENTO COMEÇA AQUI</span>
 
-  <p>
-    Compare serviços, conheça portfólios e solicite orçamentos de
-    profissionais especializados.
-  </p>
+        <h1>
+          Encontre os profissionais certos para transformar seu evento.
+        </h1>
 
-  <div class="hero__search">
-    <app-search-bar />
-  </div>
+        <p>
+          Compare serviços, conheça portfólios e solicite orçamentos de
+          profissionais especializados.
+        </p>
+
+        <div class="hero__actions">
+          <button class="hero__primary-button" type="button">
+            Buscar profissionais
+          </button>
+
+          <button class="hero__secondary-button" type="button">
+            Como funciona
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__image">
+ <img
+  src="assets/images/hero-evento.jpeg"
+  alt="Fotógrafo trabalhando durante um evento"
+/>
 </div>
+
+      <div class="hero__search">
+        <app-search-bar />
+      </div>
+    </div>
+  </section>
+</main>

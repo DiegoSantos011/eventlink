@@ -1,24 +1,28 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   border-bottom: 1px solid #e5e7eb;
-  background-color: #ffffff;
+  background-color: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(12px);
 }
 
 .header__container {
-  width: min(1200px, calc(100% - 40px));
-  min-height: 72px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: min(1200px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
   gap: 32px;
 }
 
 .header__logo {
-  color: #0f2f5f;
+  color: #0d1b2a;
   font-size: 24px;
-  font-weight: 700;
-  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .header__nav {
@@ -27,14 +31,13 @@
   gap: 32px;
 
   a {
-    color: #374151;
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #0f2f5f;
+      color: #0d1b2a;
     }
   }
 }
@@ -51,18 +54,57 @@
   padding: 0 18px;
   border-radius: 10px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .header__login {
-  border: 1px solid #d1d5db;
-  color: #0f2f5f;
-  background-color: #ffffff;
+  border: 1px solid transparent;
+  color: #0d1b2a;
+  background-color: transparent;
+
+  &:hover {
+    background-color: #f1f5f9;
+  }
 }
 
 .header__signup {
-  border: 1px solid #0f2f5f;
+  border: 1px solid #0d1b2a;
   color: #ffffff;
-  background-color: #0f2f5f;
+  background-color: #0d1b2a;
+  box-shadow: 0 8px 18px rgb(13 27 42 / 18%);
+
+  &:hover {
+    background-color: #12366b;
+    border-color: #12366b;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container {
+    width: min(100% - 24px, 1200px);
+    min-height: 64px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__login {
+    display: none;
+  }
+
+  .header__signup {
+    min-height: 38px;
+    padding: 0 14px;
+  }
 }
