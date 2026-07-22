@@ -1,0 +1,56 @@
+<article class="professional-card">
+  <div class="professional-card__image-wrapper">
+    <img
+      class="professional-card__image"
+      [src]="image()"
+      [alt]="'Foto de ' + name()"
+    />
+
+    <button
+      class="professional-card__favorite"
+      type="button"
+      aria-label="Adicionar profissional aos favoritos"
+    >
+      ♡
+    </button>
+
+    <div class="professional-card__rating">
+      <span aria-hidden="true">★</span>
+      <strong>{{ rating() }}</strong>
+      <span>({{ reviews() }})</span>
+    </div>
+  </div>
+
+  <div class="professional-card__content">
+    <p class="professional-card__profession">
+      {{ profession() }}
+    </p>
+
+    <h3>
+      {{ name() }}
+    </h3>
+
+    <p class="professional-card__location">
+      {{ location() }}
+    </p>
+
+    <div class="professional-card__footer">
+      <div>
+        <span class="professional-card__price-label">
+          A partir de
+        </span>
+
+        <strong class="professional-card__price">
+          R$ {{ startingPrice() }}
+        </strong>
+      </div>
+
+      <button
+        class="professional-card__profile-button"
+        type="button"
+      >
+        Ver perfil
+      </button>
+    </div>
+  </div>
+</article>

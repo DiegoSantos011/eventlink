@@ -1,6 +1,7 @@
 <app-header />
 
 <main class="home">
+  <!-- HERO -->
   <section class="hero">
     <div class="hero__container">
       <div class="hero__content">
@@ -16,25 +17,89 @@
         </p>
 
         <div class="hero__actions">
-          <button class="hero__primary-button" type="button">
+          <button class="hero__button hero__button--primary">
             Buscar profissionais
           </button>
 
-          <button class="hero__secondary-button" type="button">
+          <button class="hero__button hero__button--secondary">
             Como funciona
           </button>
         </div>
+
+        <app-search-bar />
       </div>
 
       <div class="hero__image">
- <img
-  src="assets/images/hero-evento.jpeg"
-  alt="Fotógrafo trabalhando durante um evento"
-/>
-</div>
+        <img
+          src="assets/images/hero-evento.jpeg"
+          alt="Fotógrafo trabalhando durante um evento"
+        />
+      </div>
+    </div>
+  </section>
 
-      <div class="hero__search">
-        <app-search-bar />
+  <!-- CATEGORIAS -->
+  <section class="categories">
+    <div class="categories__container">
+      <div class="categories__header">
+        <div>
+          <span class="categories__eyebrow">
+            EXPLORE POR CATEGORIA
+          </span>
+
+          <h2>
+            Encontre o profissional ideal para o seu evento
+          </h2>
+        </div>
+
+        <a href="#">Ver todas as categorias</a>
+      </div>
+
+      <div class="categories__grid">
+        @for (category of categories; track category.title) {
+          <app-category-card
+            [icon]="category.icon"
+            [title]="category.title"
+            [professionals]="category.professionals">
+          </app-category-card>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFISSIONAIS -->
+  <section class="featured-professionals">
+    <div class="featured-professionals__container">
+      <div class="featured-professionals__header">
+        <div>
+          <span class="featured-professionals__eyebrow">
+            PROFISSIONAIS EM DESTAQUE
+          </span>
+
+          <h2>
+            Conheça alguns talentos disponíveis
+          </h2>
+
+          <p>
+            Profissionais bem avaliados para tornar seu evento inesquecível.
+          </p>
+        </div>
+
+        <a href="#">Ver todos os profissionais</a>
+      </div>
+
+      <div class="featured-professionals__grid">
+        @for (professional of featuredProfessionals; track professional.name) {
+          <app-professional-card
+            [image]="professional.image"
+            [name]="professional.name"
+            [profession]="professional.profession"
+            [location]="professional.location"
+            [rating]="professional.rating"
+            [reviews]="professional.reviews"
+            [startingPrice]="professional.startingPrice">
+          </app-professional-card>
+        }
       </div>
     </div>
   </section>
